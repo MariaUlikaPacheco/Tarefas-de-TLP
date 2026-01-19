@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOME - Trabalhos de Programação</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f1f5f9;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      background: #3e68ca;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .header h1 a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 8px 16px;
+      background: #1e293b;
+      color: #fff;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #3e68ca;
+      color: #000;
+    }
+
+    main {
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    
+    .trimestres {
+      
+      padding: 30px;
+     
+    }
+
+.trimestres h1:hover {
+       background: #3e68ca;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <h1><a href="index.html">HOME</a></h1>
+  <button class="menu-toggle">☰</button>
+
+  <nav id="menu">
+    <a href="pag/sobre.html">Sobre Mim</a>
+    <a href="pag/trimestre1.html">I Trimestre</a>
+    <a href="pag/trimestre2.html">II Trimestre</a>
+    <a href="pag/trimestre3.html">III Trimestre</a>
+  </nav>
+</header>
+  <br>
+<main>
+ 
+  
+  <div class="trimestres">
+   <h1>Seja bem vindo/a ao meu site</h1>
+  </div>
+</main>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.getElementById('menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>
 
