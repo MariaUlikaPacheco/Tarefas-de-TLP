@@ -76,6 +76,86 @@
      
     }
 
+
+    img {
+      max-width: 100%;
+      border-radius: 6px;
+    }
+
+    video, audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+
+    form {
+      background: #fff;
+      padding: 25px;
+     width: 100%;
+      max-width: 700px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #1e40af;
+    }
+  
+
+    table {
+      width: 100%;
+      max-width: 700px;
+      margin: auto;
+      border-collapse: collapse;
+      background: white;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background: #2563eb;
+      color: white;
+    }
+  
+
+
   
   </style>
 </head>
@@ -93,11 +173,77 @@
 </header>
 
 <main>
-  <div class="trimestre-box">
 
-   
+
+   <div class="trimestre-box">
+
+  <h2>Imagem</h2>
+  <img src="../files/fhot.jpeg" alt="Imagem exemplo" width="300"><br><br>
+
+  <h2>Vídeo</h2>
+  <video width="320" controls>
+    <source src="../files/vid.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo.
+  </video><br><br>
+
+  <h2>Áudio</h2>
+  <audio controls>
+    <source src="../files/music.mpeg" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio><br><br>
+
+  <h2>Formulário de Cadastro</h2>
+  <form id="formCadastro">
+    <label>Nome:</label><br>
+    <input type="text" id="nome" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" id="email" required><br><br>
+
+    <label>Telefone:</label><br>
+    <input type="text" id="telefone" required><br><br>
+
+    <button type="submit">Cadastrar</button>
+  </form><br><br>
+
+
+  <h2>Dados Cadastrados</h2>
+  <table border="1" width="100%" id="tabelaDados">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Telefone</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+    </tbody>
+  </table>
+
+
   </div>
 </main>
+
+
+<script>
+  document.getElementById("formCadastro").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let nome = document.getElementById("nome").value;
+    let email = document.getElementById("email").value;
+    let telefone = document.getElementById("telefone").value;
+
+    let tabela = document.getElementById("tabelaDados").getElementsByTagName("tbody")[0];
+    let novaLinha = tabela.insertRow();
+
+    novaLinha.insertCell(0).innerText = nome;
+    novaLinha.insertCell(1).innerText = email;
+    novaLinha.insertCell(2).innerText = telefone;
+
+    this.reset();
+  });
+</script>
 
 </body>
 </html>
