@@ -17,6 +17,23 @@
       background: #f1f5f9;
     }
 
+    .maria{
+     
+      position: sticky;
+      top: 0;
+      
+      
+       
+    }
+.mari{
+      text-align: center;
+      background-color: #388e3c;
+      position: sticky;
+      top: 0;
+      padding: 15px 25px;
+      
+       
+    }
     
     .header {
       position: sticky;
@@ -76,12 +93,123 @@
      
     }
 
-  
+
+    
+        .sidebar {
+            background-color: #388e3c;
+            padding: 25px;
+            color: white;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 15px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+ 
+        .cards {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background: white;
+        }
+
+        .card {
+            width: 30%;
+            background: #e8f5e9;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+       
+        .conteudo {
+            display: flex;
+            gap: 20px;
+            padding: 40px 20px;
+        }
+
+        .box-texto {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            width: 50%;
+        }
+
+        .box-texto h2 {
+            margin-bottom: 10px;
+            color: #2e7d32;
+        }
+
+
+        footer {
+            background-color: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .sidebar.active {
+                display: block;
+            }
+
+            .cards {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .card {
+                width: 100%;
+            }
+
+            .conteudo {
+                flex-direction: column;
+            }
+            }
   </style>
 </head>
 
 <body>
 
+  <div class="maria">
+<h1 class="mari">Trabalho de TLP feito pela Maria Pacheco</h1>
 <header class="header">
   <h1><a href="../index.html">HOME</a></h1>
 
@@ -91,13 +219,69 @@
     <a href="trimestre3.html">IIIº Trimmestre.</a>
   </nav>
 </header>
+</div>
 
-<main>
-  <div class="trimestre-box">
+<section class="cards">
+    <div class="card">
+        <img src="../files/6384e16a0d364a26696798d41418f95e.jpg" alt="Educação"> 
+        
+      </div>
 
-    
-  </div>
-</main>
+    <div class="card">
+        <img src="../files/80bde98b1b8f78b55072bf26c2c5095a-qi4ds8smnr.webp" alt="Tecnologia">
+         
+      </div>
+
+    <div class="card">
+        <img src="../files/dd0fa275e5aa35a58e2e882843eacda8.jpg" alt="Inovação">
+         </div>
+</section>
+
+<section class="conteudo">
+    <div class="box-texto">
+        <h2>Sobre Nós</h2>
+        <p>
+            A MP Moda Feminina é uma empresa dedicada à venda de roupas voltadas exclusivamente para a moda feminina. Nascemos com o propósito de valorizar a beleza, a elegância e a autoestima da mulher moderna, oferecendo peças que combinam estilo, qualidade e conforto.
+<br>
+<br>
+Trabalhamos com tendências atuais da moda, selecionando cuidadosamente cada peça para garantir que nossas clientes estejam sempre bem-vestidas, confiantes e alinhadas com o que há de mais atual no universo fashion. Acreditamos que a roupa é uma forma de expressão e, por isso, buscamos oferecer opções que atendam diferentes estilos, ocasiões e personalidades.
+<br>
+<br>
+Nosso compromisso é proporcionar uma experiência de compra prática, segura e satisfatória, priorizando o bom atendimento, preços acessíveis e produtos de qualidade.
+        </p>
+    </div>
+
+    <div class="box-texto">
+        <h2>👗 Quem Somos</h2>
+        <p> 
+        
+
+Somos uma empresa apaixonada por moda e dedicada a atender mulheres que desejam se destacar com elegância e autenticidade. A MP Moda Feminina trabalha com:
+<br>
+<br>
+-Vestidos casuais e formais
+<br>
+-Conjuntos modernos
+<br>
+-Blusas, saias e calças estilosas
+<br>
+-Roupas sociais e executivas
+<br>
+-Peças para ocasiões especiais
+<br>
+<br>
+Nosso objetivo é vestir sonhos, realçar a confiança feminina e acompanhar cada cliente em diferentes momentos da sua vida.
+<br>
+<br>
+A MP Moda Feminina não vende apenas roupas — vendemos estilo, autoestima e confiança.  
+        </p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 - Trabalho de TLP</p>
+    <p>Desenvolvido pela Maria Pacheco</p>
+</footer>
 
 </body>
 </html>
