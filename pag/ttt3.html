@@ -1,29 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Trimestre</title>
 
-    <title>Sistema de Média Escolar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-    <style>
+    body {
+      background: #f1f5f9;
+    }
 
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+    
+    .header {
+      position: sticky;
+      top: 0;
+      background: #606162;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        body{
-            background: #f0f2f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+    .header h1 a {
+     text-decoration: none;
+      padding: 8px 16px;
+      background: #1e293b;
+      color: #fff;
+      border-radius: 6px;
+      font-weight: bold;
+    
+    }
 
-        .container{
+    .header a:hover {
+      
+    background-color: #606162;
+    }
+
+
+    nav {
+      display: flex;
+      gap: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 8px 16px;
+      background: #1e293b;
+      color: #fff;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      
+    background-color: #606162;
+    }
+
+  
+    main {
+      padding: 40px;
+    }
+
+    .trimestre-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+     
+    }
+
+    .container{
             width: 420px;
             background: white;
             padding: 30px;
@@ -50,7 +103,7 @@
             width: 100%;
             padding: 12px;
             border: none;
-            background: #007bff;
+            background: #606162;
             color: white;
             font-size: 16px;
             border-radius: 5px;
@@ -85,121 +138,141 @@
             font-weight: bold;
         }
 
-    </style>
 
+  
+  </style>
 </head>
+
 <body>
 
+<header class="header">
+  <h1><a href="../index.html">HOME</a></h1>
+
+  <nav>
+    <a href="trimestre1.html">Iº Trimmestre.</a>
+    <a href="trimestre2.html">IIº Trimmestre.</a>
+    <a href="trimestre3.html">IIIº Trimmestre.</a>
+  </nav>
+</header>
+
+<main>
+  <div class="trimestre-box">
+
+    
     <div class="container">
 
-        <h1>Sistema Escolar</h1>
+      <h1>Sistema Escolar</h1>
 
-        <input type="text" id="nome" placeholder="Nome do aluno">
+      <input type="text" id="nome" placeholder="Nome do aluno">
 
-        <input type="text" id="disciplina" placeholder="Disciplina">
+      <input type="text" id="disciplina" placeholder="Disciplina">
 
-        <input type="number" id="nota1" placeholder="Nota do 1º Trimestre">
+      <input type="number" id="nota1" placeholder="Nota do 1º Trimestre">
 
-        <input type="number" id="nota2" placeholder="Nota do 2º Trimestre">
+      <input type="number" id="nota2" placeholder="Nota do 2º Trimestre">
 
-        <input type="number" id="nota3" placeholder="Nota do 3º Trimestre">
+      <input type="number" id="nota3" placeholder="Nota do 3º Trimestre">
 
-        <button onclick="calcularMedia()">
-            Calcular Resultado
-        </button>
+      <button onclick="calcularMedia()">
+          Calcular Resultado
+      </button>
 
-        <div id="resultado">
-            Resultado aparecerá aqui...
-        </div>
+      <div id="resultado">
+          Resultado aparecerá aqui...
+      </div>
 
-    </div>
+  </div>
 
-    <script>
+  <script>
 
-        function calcularMedia(){
+      function calcularMedia(){
 
-            let nome = document.getElementById("nome").value;
+          let nome = document.getElementById("nome").value;
 
-            let disciplina = document.getElementById("disciplina").value;
+          let disciplina = document.getElementById("disciplina").value;
 
-            let nota1 = Number(document.getElementById("nota1").value);
+          let nota1 = Number(document.getElementById("nota1").value);
 
-            let nota2 = Number(document.getElementById("nota2").value);
+          let nota2 = Number(document.getElementById("nota2").value);
 
-            let nota3 = Number(document.getElementById("nota3").value);
+          let nota3 = Number(document.getElementById("nota3").value);
 
-            // VALIDAÇÃO
-            if(
-                nota1 < 0 || nota1 > 20 ||
-                nota2 < 0 || nota2 > 20 ||
-                nota3 < 0 || nota3 > 20
-            ){
+          // VALIDAÇÃO
+          if(
+              nota1 < 0 || nota1 > 20 ||
+              nota2 < 0 || nota2 > 20 ||
+              nota3 < 0 || nota3 > 20
+          ){
 
-                alert("Não é possível inserir notas menores que 0 ou maiores que 20.");
+              alert("Não é possível inserir notas menores que 0 ou maiores que 20.");
 
-                return;
-            }
+              return;
+          }
 
-            // MÉDIA
-            let media = (nota1 + nota2 + nota3) / 3;
+          // MÉDIA
+          let media = (nota1 + nota2 + nota3) / 3;
 
-            let situacao = "";
+          let situacao = "";
 
-            let classe = "";
+          let classe = "";
 
-            // RESULTADO
-            if(media >= 10 && media <= 20){
+          // RESULTADO
+          if(media >= 10 && media <= 20){
 
-                situacao = "APROVADO";
+              situacao = "APROVADO";
 
-                classe = "aprovado";
-            }
+              classe = "aprovado";
+          }
 
-            else if(media >= 8 && media <= 9){
+          else if(media >= 8 && media <= 9){
 
-                situacao = "RECURSO";
+              situacao = "RECURSO";
 
-                classe = "recurso";
-            }
+              classe = "recurso";
+          }
 
-            else if(media < 7 || media == 0){
+          else if(media < 7 || media == 0){
 
-                situacao = "REPROVADO";
+              situacao = "REPROVADO";
 
-                classe = "reprovado";
-            }
+              classe = "reprovado";
+          }
 
-            else{
+          else{
 
-                situacao = "FORA DO INTERVALO DEFINIDO";
+              situacao = "FORA DO INTERVALO DEFINIDO";
 
-                classe = "reprovado";
-            }
+              classe = "reprovado";
+          }
 
-            // EXIBIR RESULTADO
-            document.getElementById("resultado").innerHTML = `
+          // EXIBIR RESULTADO
+          document.getElementById("resultado").innerHTML = `
 
-                <p><strong>Aluno:</strong> ${nome}</p>
+              <p><strong>Aluno:</strong> ${nome}</p>
 
-                <p><strong>Disciplina:</strong> ${disciplina}</p>
+              <p><strong>Disciplina:</strong> ${disciplina}</p>
 
-                <p><strong>1º Trimestre:</strong> ${nota1}</p>
+              <p><strong>1º Trimestre:</strong> ${nota1}</p>
 
-                <p><strong>2º Trimestre:</strong> ${nota2}</p>
+              <p><strong>2º Trimestre:</strong> ${nota2}</p>
 
-                <p><strong>3º Trimestre:</strong> ${nota3}</p>
+              <p><strong>3º Trimestre:</strong> ${nota3}</p>
 
-                <p><strong>Média:</strong> ${media.toFixed(1)}</p>
+              <p><strong>Média:</strong> ${media.toFixed(1)}</p>
 
-                <p>
-                    <strong>Situação:</strong> 
-                    <span class="${classe}">${situacao}</span>
-                </p>
+              <p>
+                  <strong>Situação:</strong> 
+                  <span class="${classe}">${situacao}</span>
+              </p>
 
-            `;
-        }
+          `;
+      }
 
-    </script>
+  </script>
+    
+  </div>
+</main>
 
 </body>
+
 </html>
